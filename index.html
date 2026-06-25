@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GetKnownAI — Get Your HVAC Company Recommended by ChatGPT</title>
+<meta name="description" content="When homeowners ask ChatGPT for the best HVAC company near them, does your name come up? Get the free HVAC AI-Visibility Checklist and find out where you stand." />
+
+<!-- ============================================================
+     SINGLE-GOAL LEAD-MAGNET (squeeze) PAGE.
+     One job: capture the email in exchange for the free checklist.
+     Structure: Above-the-fold offer+form+visual -> Problem -> Agitate
+     -> Mechanism -> What's inside (+form) -> Founder note -> FAQ -> CTA.
+     Form is wired to Formspree. Nothing to configure.
+     ============================================================ -->
+
+<style>
+  :root{
+    --bg:#0b0f14; --bg-2:#0e141b; --panel:#121a22; --panel-2:#16202b;
+    --ink:#eef3f8; --muted:#9db0c1; --faint:#6f8294; --line:#22303d;
+    --brand:#ff7a1a; --brand-2:#ffb070; --brand-ink:#1a1207; --good:#34d399; --bad:#fb6a5f;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{letter-spacing:-.025em}
+  .brand-tx{color:var(--brand)}
+
+  /* NAV */
+  .nav{display:flex;align-items:center;justify-content:space-between;
+    padding:18px 22px;max-width:var(--maxw);margin:0 auto}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .logo span{color:var(--brand)}
+  .nav .cta{font-size:14px;font-weight:700;background:var(--brand);color:var(--brand-ink);
+    padding:10px 16px;border-radius:9px;text-decoration:none}
+
+  /* HERO */
+  .hero{background:radial-gradient(1200px 500px at 70% -10%, rgba(255,122,26,.13), transparent 60%);padding:46px 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--brand-2);
+    background:rgba(255,122,26,.1);border:1px solid rgba(255,122,26,.28);
+    padding:6px 12px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(32px,4.6vw,52px);line-height:1.05;margin:0 0 18px;font-weight:850}
+  h1 em{color:var(--brand);font-style:normal}
+  .sub{font-size:clamp(16.5px,1.9vw,19.5px);color:var(--muted);margin:0 0 26px;max-width:560px}
+  .sub b{color:var(--ink)}
+
+  .form-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:18px;max-width:560px;box-shadow:0 20px 50px -28px rgba(0,0,0,.7)}
+  .form-card .label{font-size:13.5px;font-weight:700;color:var(--brand-2);margin-bottom:10px}
+  .form-row{display:flex;gap:10px;flex-wrap:wrap}
+  input[type=email]{flex:1 1 230px;min-width:0;background:#0a0f14;border:1px solid var(--line);
+    color:var(--ink);padding:15px 15px;border-radius:10px;font-size:16px}
+  input::placeholder{color:#5f7284}
+  button.primary{background:var(--brand);color:var(--brand-ink);border:0;font-weight:800;
+    font-size:16px;padding:15px 22px;border-radius:10px;cursor:pointer;white-space:nowrap;
+    transition:filter .15s, transform .15s}
+  button.primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .micro{font-size:12.5px;color:var(--faint);margin-top:11px;display:flex;gap:14px;flex-wrap:wrap}
+  .micro span{display:inline-flex;align-items:center;gap:5px}
+
+  /* LEAD MAGNET MOCKUP */
+  .mock-wrap{display:flex;justify-content:center;perspective:1200px}
+  .mock{width:300px;background:#fbfdff;color:#15202b;border-radius:10px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.65);transform:rotate(2.2deg);
+    border:1px solid #dfe7ee;overflow:hidden}
+  .mock .top{background:var(--brand);height:8px}
+  .mock .body{padding:22px 20px}
+  .mock h4{margin:0 0 4px;font-size:17px;color:#0c1116;letter-spacing:-.02em;line-height:1.15}
+  .mock .kick{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#d9650f;margin-bottom:9px}
+  .mock .line{height:8px;background:#e8eef4;border-radius:4px;margin:9px 0}
+  .mock .line.s{width:70%}
+  .mock .chk{display:flex;align-items:center;gap:8px;margin:11px 0;font-size:12px;color:#33424f}
+  .mock .chk i{width:15px;height:15px;border-radius:4px;background:var(--good);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-style:normal;flex:0 0 auto}
+  .mock .tag{margin-top:14px;font-size:10px;color:#7d8d99;text-align:center}
+
+  /* TRUST STRIP */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .strip-cell{padding:22px;text-align:center;border-right:1px solid var(--line)}
+  .strip-cell:last-child{border-right:0}
+  .strip-cell .n{font-size:26px;font-weight:850;color:var(--brand)}
+  .strip-cell .l{font-size:13.5px;color:var(--muted);margin-top:3px}
+
+  /* SECTIONS */
+  section.block{padding:54px 0}
+  .kicker{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--brand-2);margin-bottom:12px}
+  h2{font-size:clamp(25px,3.3vw,36px);margin:0 0 16px;font-weight:850;line-height:1.12}
+  .lead{color:var(--muted);font-size:18px;max-width:680px}
+  .lead b{color:var(--ink)}
+
+  .demo{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:30px;max-width:680px}
+  .demo .q{color:var(--faint);font-size:13.5px;margin-bottom:10px}
+  .demo .bubble{background:#0a0f14;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15.5px;line-height:1.5}
+  .demo .bubble strong{color:var(--brand-2)}
+  .demo .you{margin-top:14px;color:var(--bad);font-weight:600;font-size:14.5px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  .vs{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .vs h4{margin:0 0 12px;font-size:15px;letter-spacing:0}
+  .vs.bad h4{color:var(--bad)} .vs.good h4{color:var(--good)}
+  .vs ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px;color:var(--muted)}
+  .vs li{padding-left:24px;position:relative}
+  .vs.bad li:before{content:"✕";position:absolute;left:0;color:var(--bad);font-weight:800}
+  .vs.good li:before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:800}
+
+  /* OFFER / WHAT'S INSIDE */
+  .offer{background:linear-gradient(180deg,var(--panel-2),#0f1721);border:1px solid var(--line);
+    border-radius:18px;padding:34px}
+  .offer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+  ul.checks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:13px}
+  ul.checks li{padding-left:30px;position:relative;color:var(--ink);font-size:15.5px}
+  ul.checks li:before{content:"✓";position:absolute;left:0;top:1px;color:var(--good);font-weight:850}
+
+  /* FOUNDER */
+  .founder{display:flex;gap:18px;align-items:flex-start;background:var(--panel);
+    border:1px solid var(--line);border-radius:14px;padding:24px;max-width:760px}
+  .founder .av{width:52px;height:52px;border-radius:50%;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--brand),#c14d00);display:flex;align-items:center;
+    justify-content:center;font-weight:800;color:#fff;font-size:20px}
+  .founder p{margin:0 0 10px;color:var(--muted);font-size:15.5px}
+  .founder .sig{color:var(--ink);font-weight:700;font-size:14.5px}
+
+  /* FAQ */
+  .faq{display:grid;gap:12px;margin-top:26px;max-width:760px}
+  .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--brand);font-weight:800}
+  .faq details[open] summary:after{content:"–"}
+  .faq p{color:var(--muted);margin:11px 0 0;font-size:15px}
+
+  /* FINAL CTA */
+  .cta-band{background:radial-gradient(800px 300px at 50% 0%, rgba(255,122,26,.16), transparent 60%);
+    border-top:1px solid var(--line);padding:60px 0;text-align:center}
+  .cta-band h2{max-width:680px;margin:0 auto 14px}
+  .cta-band .form-card{margin:24px auto 0}
+
+  footer{padding:34px 0;border-top:1px solid var(--line);color:var(--faint);font-size:13.5px;text-align:center}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .mock-wrap{order:-1}
+    .offer-grid{grid-template-columns:1fr;gap:26px}
+    .split{grid-template-columns:1fr}
+    .strip-grid{grid-template-columns:1fr}
+    .strip-cell{border-right:0;border-bottom:1px solid var(--line)}
+    .strip-cell:last-child{border-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="logo">Get<span>Known</span>AI</div>
+    <a class="cta" href="#get">Get the free checklist</a>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">⚡ For HVAC contractors</span>
+        <h1>Become the HVAC company <em>AI recommends</em></h1>
+        <p class="sub">When a homeowner asks ChatGPT or Google's AI for the best HVAC company near them, it names just three. If you're not one of them, you didn't lose the bid — <b>you never knew there was one.</b> See exactly where you stand, free.</p>
+
+        <div class="form-card" id="get">
+          <div class="label">Free: The HVAC AI-Visibility Checklist →</div>
+          <form action="https://formspree.io/f/mojzznlj" method="POST">
+            <div class="form-row">
+              <input type="email" name="email" placeholder="you@yourcompany.com" required />
+              <button class="primary" type="submit">Send me the checklist</button>
+            </div>
+            <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
+            <input type="hidden" name="source" value="hero" />
+            <div class="micro">
+              <span>✓ Instant download</span>
+              <span>✓ No spam, ever</span>
+              <span>✓ Built for owners</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mock-wrap" aria-hidden="true">
+        <div class="mock">
+          <div class="top"></div>
+          <div class="body">
+            <div class="kick">Free Guide</div>
+            <h4>The HVAC AI-Visibility Checklist</h4>
+            <div class="line"></div><div class="line s"></div>
+            <div class="chk"><i>✓</i> The 60-second invisibility test</div>
+            <div class="chk"><i>✓</i> The 7 signals AI checks</div>
+            <div class="chk"><i>✓</i> Where most companies fall short</div>
+            <div class="chk"><i>✓</i> What to fix first</div>
+            <div class="tag">PDF · 10-minute read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== TRUST STRIP ===================== -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div class="strip-cell"><div class="n">45%</div><div class="l">of consumers now use AI to find a contractor</div></div>
+      <div class="strip-cell"><div class="n">~1.2%</div><div class="l">of local businesses are ever named by ChatGPT</div></div>
+      <div class="strip-cell"><div class="n">3</div><div class="l">names the AI gives — that's the whole shortlist</div></div>
+    </div>
+  </div>
+
+  <!-- ===================== PROBLEM ===================== -->
+  <section class="block wrap">
+    <div class="kicker">What's changing</div>
+    <h2>Your customers stopped Googling</h2>
+    <p class="lead">For twenty years it was the Yellow Pages, then Google. Now the homeowner whose AC just died in a heatwave opens ChatGPT and types <b>"who's the best HVAC company near me?"</b> — and trusts whatever it says. The AI doesn't hand back ten blue links to scroll. It gives three names and a phone number, and the decision is basically made.</p>
+
+    <div class="demo">
+      <div class="q">A homeowner in your town, right now:</div>
+      <div class="bubble">"Best HVAC company in [your city] for an emergency AC repair?"<br/><br/>
+      <strong>"Here are three highly-rated options near you: ▮▮▮▮▮ Heating &amp; Air, ▮▮▮▮▮ HVAC, and ▮▮▮▮▮ Cooling…"</strong></div>
+      <div class="you">↳ Your company isn't on the list. They call a competitor. You never knew the job existed.</div>
+    </div>
+  </section>
+
+  <!-- ===================== AGITATE ===================== -->
+  <section class="block" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="kicker">Why it stings</div>
+      <h2>This isn't a lead you lost. It's a lead you never saw.</h2>
+      <p class="lead">A bad Google ranking, you can at least see. This is invisible. There's no missed call, no unanswered form — the customer was simply handed to someone else before you were ever in the running. And it compounds: every week you're not in those answers is another stack of jobs quietly routed to the same two or three competitors who happen to show up. Worst of all, <b>being the best HVAC company in town doesn't fix it</b> — AI doesn't judge your work, only what it can read about you online.</p>
+    </div>
+  </section>
+
+  <!-- ===================== MECHANISM ===================== -->
+  <section class="block wrap">
+    <div class="kicker">Why AI ignores most contractors</div>
+    <h2>It's not random — and it's fixable</h2>
+    <p class="lead">AI assistants only recommend businesses they can <b>read, trust, and verify</b>, and most contractor websites quietly fail those checks without ever knowing it. The catch is that it's not one switch you flip — it's a specific set of signals that have to be done correctly, in the right order, and kept current as the AI tools change every few months. Get the wrong ones, or do the right ones halfway, and you stay invisible no matter how good your work is.</p>
+
+    <div class="split">
+      <div class="vs bad">
+        <h4>What AI sees on most HVAC sites</h4>
+        <ul>
+          <li>"Welcome to our family of comfort experts…"</li>
+          <li>No structured data it can actually read</li>
+          <li>A half-finished Google profile</li>
+          <li>Details that don't match across the web</li>
+        </ul>
+      </div>
+      <div class="vs good">
+        <h4>What gets a company recommended</h4>
+        <ul>
+          <li>Pages that answer the real question first</li>
+          <li>The right signals, set up correctly</li>
+          <li>A profile AI trusts and pulls from</li>
+          <li>Consistency it can verify everywhere</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT'S INSIDE (re-sell + form) ===================== -->
+  <section class="block wrap">
+    <div class="offer">
+      <div class="offer-grid">
+        <div>
+          <div class="kicker">The free checklist</div>
+          <h2 style="font-size:clamp(23px,2.8vw,30px)">Find out exactly where you stand</h2>
+          <p class="lead" style="font-size:16.5px">A plain-English checklist you can read in ten minutes — built for busy owners, not marketers:</p>
+          <ul class="checks">
+            <li>The 60-second test to see if ChatGPT recommends you or your competitors right now</li>
+            <li>The 7 signals AI weighs before it names a contractor — and where most fall short</li>
+            <li>How to tell which gaps are actually costing you jobs</li>
+            <li>The one technical detail that decides whether AI can "see" you at all</li>
+            <li>Where to start this week so you're not guessing</li>
+          </ul>
+        </div>
+        <div>
+          <div class="form-card" id="get2" style="max-width:none">
+            <div class="label">Get it free — straight to your inbox</div>
+            <form action="https://formspree.io/f/mojzznlj" method="POST">
+              <div class="form-row">
+                <input type="email" name="email" placeholder="you@yourcompany.com" required />
+                <button class="primary" type="submit">Send me the checklist</button>
+              </div>
+              <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
+              <input type="hidden" name="source" value="offer" />
+              <div class="micro"><span>✓ Instant</span><span>✓ No spam</span><span>✓ Unsubscribe anytime</span></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="block wrap">
+    <div class="kicker">Before you ask</div>
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>What exactly do I get?</summary>
+        <p>A free, plain-English PDF checklist you can read in ten minutes: the 60-second test to see where you stand in AI search today, the seven signals that decide whether AI recommends you, and where to start. Built for busy owners.</p></details>
+      <details><summary>Isn't this just SEO?</summary>
+        <p>No. Traditional SEO gets you ranked on Google's blue links. This is about being the company an AI assistant actually <em>names and recommends</em> when someone asks — a different set of signals most SEO providers aren't even looking at yet.</p></details>
+      <details><summary>Do I have to be technical?</summary>
+        <p>Not at all. It's written for owners. Anything technical is explained plainly and can be handed straight to whoever runs your website.</p></details>
+      <details><summary>What's the catch — why free?</summary>
+        <p>No catch. Most HVAC owners don't realize AI search is already costing them jobs, and the checklist is the fastest way to see it for yourself. If you later want it done for you, I offer that too — but the checklist stands on its own.</p></details>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Find out if AI is recommending you — or your competitor</h2>
+      <p class="lead" style="margin:0 auto;color:var(--muted)">Takes ten minutes to read. Could be the difference in next summer's busy season.</p>
+      <div class="form-card">
+        <div class="label">The HVAC AI-Visibility Checklist — free</div>
+        <form action="https://formspree.io/f/mojzznlj" method="POST">
+          <div class="form-row">
+            <input type="email" name="email" placeholder="you@yourcompany.com" required />
+            <button class="primary" type="submit">Send me the checklist</button>
+          </div>
+          <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
+          <input type="hidden" name="source" value="footer-cta" />
+          <div class="micro"><span>✓ Instant download</span><span>✓ No spam, ever</span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="logo" style="font-size:16px;margin-bottom:8px">Get<span style="color:var(--brand)">Known</span>AI</div>
+    Helping local businesses get found and recommended by AI search.<br/>
+    © 2026 GetKnownAI · <a href="#get" style="color:var(--brand-2)">Get the free checklist</a>
+  </footer>
+
+</body>
+</html>
