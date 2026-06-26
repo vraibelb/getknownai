@@ -169,13 +169,13 @@
       <div>
         <span class="eyebrow">⚡ For HVAC contractors</span>
         <h1>Become the HVAC company <em>AI recommends</em></h1>
-        <p class="sub">When a homeowner asks ChatGPT or Google's AI for the best HVAC company near them, it names just three. If you're not one of them, you didn't lose the bid — <b>you never knew there was one.</b> See exactly where you stand, free.</p>
+        <p class="sub">For twenty years it was the Yellow Pages, then Google. Now homeowners just ask ChatGPT for the best HVAC company near them — and trust the <b>three names</b> it gives back. The free checklist shows you how to check if you're one of them — and what to do if you're not.</p>
 
         <div class="form-card" id="get">
           <div class="label">Free: The HVAC AI-Visibility Checklist →</div>
-          <form action="https://formspree.io/f/mojzznlj" method="POST">
+          <form class="ml-optin" action="https://assets.mailerlite.com/jsonp/2470944/forms/191264099055699103/subscribe" method="post">
             <div class="form-row">
-              <input type="email" name="email" placeholder="you@yourcompany.com" required />
+              <input type="email" name="email" placeholder="Enter your email here" required />
               <button class="primary" type="submit">Send me the checklist</button>
             </div>
             <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
@@ -218,9 +218,9 @@
 
   <!-- ===================== PROBLEM ===================== -->
   <section class="block wrap">
-    <div class="kicker">What's changing</div>
-    <h2>Your customers stopped Googling</h2>
-    <p class="lead">For twenty years it was the Yellow Pages, then Google. Now the homeowner whose AC just died in a heatwave opens ChatGPT and types <b>"who's the best HVAC company near me?"</b> — and trusts whatever it says. The AI doesn't hand back ten blue links to scroll. It gives three names and a phone number, and the decision is basically made.</p>
+    <div class="kicker">How it works now</div>
+    <h2>The shortlist is just three names</h2>
+    <p class="lead">When a homeowner whose AC just died asks an AI assistant who to call, it doesn't hand back ten blue links to scroll and compare. It gives <b>three names and a phone number</b> — and for most people, the decision is basically made right there. Being on that three-name shortlist is the entire game now. Being off it means the customer never even considers you.</p>
 
     <div class="demo">
       <div class="q">A homeowner in your town, right now:</div>
@@ -286,9 +286,9 @@
         <div>
           <div class="form-card" id="get2" style="max-width:none">
             <div class="label">Get it free — straight to your inbox</div>
-            <form action="https://formspree.io/f/mojzznlj" method="POST">
+            <form class="ml-optin" action="https://assets.mailerlite.com/jsonp/2470944/forms/191264099055699103/subscribe" method="post">
               <div class="form-row">
-                <input type="email" name="email" placeholder="you@yourcompany.com" required />
+                <input type="email" name="email" placeholder="Enter your email here" required />
                 <button class="primary" type="submit">Send me the checklist</button>
               </div>
               <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
@@ -324,9 +324,9 @@
       <p class="lead" style="margin:0 auto;color:var(--muted)">Takes ten minutes to read. Could be the difference in next summer's busy season.</p>
       <div class="form-card">
         <div class="label">The HVAC AI-Visibility Checklist — free</div>
-        <form action="https://formspree.io/f/mojzznlj" method="POST">
+        <form class="ml-optin" action="https://assets.mailerlite.com/jsonp/2470944/forms/191264099055699103/subscribe" method="post">
           <div class="form-row">
-            <input type="email" name="email" placeholder="you@yourcompany.com" required />
+            <input type="email" name="email" placeholder="Enter your email here" required />
             <button class="primary" type="submit">Send me the checklist</button>
           </div>
           <input type="hidden" name="_subject" value="New GetKnownAI lead (HVAC checklist)" />
@@ -342,6 +342,25 @@
     Helping local businesses get found and recommended by AI search.<br/>
     © 2026 GetKnownAI · <a href="#get" style="color:var(--brand-2)">Get the free checklist</a>
   </footer>
+
+  <script>
+    // Submit all opt-in forms to MailerLite, then send the visitor to the branded thank-you page.
+    document.querySelectorAll('form.ml-optin').forEach(function(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = form.querySelector('button[type=submit]');
+        if(btn){ btn.textContent = 'Sending…'; btn.disabled = true; }
+        var emailInput = form.querySelector('input[type=email]');
+        var body = new FormData();
+        body.append('fields[email]', emailInput ? emailInput.value : '');
+        body.append('ml-submit', '1');
+        body.append('anticsrf', 'true');
+        fetch(form.action, { method: 'POST', body: body, mode: 'no-cors' })
+          .catch(function(){})
+          .finally(function(){ window.location.href = '/thanks.html'; });
+      });
+    });
+  </script>
 
 </body>
 </html>
