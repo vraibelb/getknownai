@@ -88,6 +88,13 @@
   .strip-cell:last-child{border-right:0}
   .strip-cell .n{font-size:26px;font-weight:850;color:var(--brand)}
   .strip-cell .l{font-size:13.5px;color:var(--muted);margin-top:3px}
+  .strip-note{font-size:12px;color:var(--faint);text-align:center;padding:0 0 16px;max-width:820px;margin:0 auto}
+
+  /* PROOF QUOTE */
+  .proof-quote{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--brand);
+    border-radius:12px;padding:20px 22px;margin-top:26px;max-width:680px}
+  .proof-quote .q-text{font-size:18px;line-height:1.45;color:var(--ink);font-style:italic}
+  .proof-quote .q-src{margin-top:10px;font-size:13px;color:var(--faint)}
 
   /* SECTIONS */
   section.block{padding:54px 0}
@@ -210,10 +217,11 @@
   <!-- ===================== TRUST STRIP ===================== -->
   <div class="strip">
     <div class="wrap strip-grid">
-      <div class="strip-cell"><div class="n">45%</div><div class="l">of consumers now use AI to find a contractor</div></div>
-      <div class="strip-cell"><div class="n">~1.2%</div><div class="l">of local businesses are ever named by ChatGPT</div></div>
-      <div class="strip-cell"><div class="n">3</div><div class="l">names the AI gives — that's the whole shortlist</div></div>
+      <div class="strip-cell"><div class="n">15 of 20</div><div class="l">established HVAC companies in our study were never mentioned in a single AI answer*</div></div>
+      <div class="strip-cell"><div class="n">~29</div><div class="l">companies the AIs recommended instead — a handful of names won almost everything</div></div>
+      <div class="strip-cell"><div class="n">3</div><div class="l">names a homeowner hears before your phone ever rings</div></div>
     </div>
+    <div class="wrap"><div class="strip-note">*Our August 2026 study: 10 real homeowner questions asked across ChatGPT, Perplexity &amp; Google AI, checked against 20 established Massachusetts HVAC companies picked from independent directories before any testing.</div></div>
   </div>
 
   <!-- ===================== PROBLEM ===================== -->
@@ -264,6 +272,20 @@
           <li>Consistency it can verify everywhere</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROOF / THE STUDY ===================== -->
+  <section class="block" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="kicker">The receipts</div>
+      <h2>We tested it on 20 real HVAC companies</h2>
+      <p class="lead">In August 2026 we asked ChatGPT, Perplexity, and Google's AI ten questions real homeowners ask — "my furnace died, who do I call," "best HVAC company near me," "who installs mini splits." Then we checked the answers against 20 established companies picked from independent directories. <b>15 of the 20 were never mentioned. Once.</b> The same few names won everything — and the AI will tell you why in its own words. Here's ChatGPT explaining why it picked one furnace company over every competitor:</p>
+      <div class="proof-quote">
+        <div class="q-text">"Their site shows actual local furnace installations rather than just generic HVAC marketing."</div>
+        <div class="q-src">— ChatGPT, when asked who to call for a furnace replacement, August 2026</div>
+      </div>
+      <p class="lead" style="margin-top:26px">That's the whole game. Engines recommend companies whose websites state specifics they can quote: years in business, review counts, service towns, emergency availability, real installations. The checklist shows you the seven signals — and how to check yours in 60 seconds.</p>
     </div>
   </section>
 
@@ -340,7 +362,7 @@
   <footer>
     <div class="logo" style="font-size:16px;margin-bottom:8px">Get<span style="color:var(--brand)">Known</span>AI</div>
     Helping local businesses get found and recommended by AI search.<br/>
-    © 2026 GetKnownAI · <a href="#get" style="color:var(--brand-2)">Get the free checklist</a>
+    © 2026 GetKnownAI · <a href="#get" style="color:var(--brand-2)">Get the free checklist</a> · <a href="/privacy.html" style="color:var(--brand-2)">Privacy policy</a> · <a href="mailto:hello@getknownai.com" style="color:var(--brand-2)">Contact</a>
   </footer>
 
   <script>
